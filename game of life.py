@@ -51,25 +51,25 @@ while True:
                 counter+=1
             if j <15 and map [i][j-1] == 1: #check left
                 counter+=1
-            if i <15 and j<15 and map [i+1][j+1] == 1:#check bottom corner
+            if i >=0 and j>0 and map [i-1][j-1] == 1:#check bottom corner
                 counter+=1
-            if i <15 and j>=0 and map [i+1][j-1] == 1:#check bottom left corner
+            if i >=0 and j<15 and map [i-1][j+1] == 1:#check bottom left corner
                 counter+=1
                 
                 
             #kill,live, or grow cells
             if map[i][j]==1 and counter <=1:
                 map[i][j]=0
-                print("I died from lonliness")
+                #print("I died from lonliness")
             if map[i][j]==1 and counter ==3 or counter ==2:
                 map[i][j] =1
-                print("cell lives")
+                #print("cell lives")
             if map[i][j]==1 and counter >=4:
                 map[i][j]=0
-                print("cell dies, too crowded")
+                #print("cell dies, too crowded")
             if map[i][j]==1 and counter ==3:
                 map[i][j] =1
-                print("cell lives, reproductions")
+                #print("cell lives, reproductions")
             
     
     py.time.wait(200)
