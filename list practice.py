@@ -33,10 +33,30 @@ print(foods, "are the choices.")
 
 #--------------------------------------------------------------
 a = [random.randint(1, 10) for i in range (0, 12)]
+
+b =[]
+for s in range(12):
+    b.append(a[11-s])
+    
+print("original list:", a)
+print("reversed list but with for loop:", b)
+
+#---------------------------------------------------------
+
 a.sort()
 print(a)
 print("The largest element in this list is: ", max(a))
+
+#-----------------------
+
+for m in range(10):
+    if a[m]+1 == a[m+1]:
+        if a[m+1]+1 == a[m+2]:
+            print("The list contains: ", a[m], a[m+1], a[m+2])
+            
+#-----------------------
+
 a.sort(reverse=True)
 print("Heres the list reversed aka decending order as well: ", a)
 
-
+#------------------------------------------------------------
